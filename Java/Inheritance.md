@@ -1,5 +1,6 @@
 # 상속(Inheritance) 정리
 
+
 ## 1. 상속이란?
 public class Child extends Parent와 같이, 한 클래스가 다른 클래스(부모)를 확장하여 상속받는 것.
 
