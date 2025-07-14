@@ -106,3 +106,158 @@ System.out.println("이름:" + "학생1");
 하지만 둘다 클래스에서 나온 실체라는 핵심 의미는 같기 때문에 보통 둘을 구분하지 않고 사용한다.
 
 
+# 배열 도입 
+
+클래스와 객체 덕분에 학생 데이터를 구조적으로 이해하기 쉽게 변경할 수 있었다.<br>
+마치 실제 학생이 있고, 그 안에 각 학생의 정보가 있는 것 같다. 따라서 사람이 이해하기도 편리하다.<br>
+이제 각각의 학생 별로 객체를 생성하고, 해당 객체에 학생의 데이터를 관리하면 된다.<br>
+하지만 코드를 보면 아쉬운 부분이 있는데, 바로 학생을 출력하는 부분이다.
+
+```java
+System.out.println("이름:" + student1.name + " 나이:" + student1.age + ...);
+System.out.println("이름:" + student2.name + " 나이:" + student2.age + ...);
+```
+
+새로운 학생이 추가될 때 마다 출력하는 부분도 함께 추가해야 한다.<br>
+배열을 사용하면 특정 타입을 연속한 데이터 구조로 묶어서 편리하게 관리할 수 있다.<br>
+`Student` 클래스를 사용한 변수들도 `Student` 타입이기 때문에 학생도 배열을 사용해서 하나의 데이터 구조로 묶어서 관리할 수 있다.<br>
+`Student` 타입을 사용하는 배열을 도입해보자.
+
+## ClassStart4
+
+```java
+package class1;
+
+public class ClassStart4 {
+    public static void main(String[] args) {
+        Student student1 = new Student();
+        student1.name = "학생1";
+        student1.age = 15;
+        student1.grade = 90;
+
+        Student student2 = new Student();
+        student2.name = "학생2";
+        student2.age = 16;
+        student2.grade = 80;
+
+        Student[] students = new Student[2];
+        students[0] = student1;
+        students[1] = student2;
+
+        System.out.println("이름:" + students[0].name + " 나이:" + students[0].age + " 성적:" + students[0].grade);
+        System.out.println("이름:" + students[1].name + " 나이:" + students[1].age + " 성적:" + students[1].grade);
+    }
+}
+```
+
+### 인스턴스 생성
+
+```java
+Student student1 = new Student();
+student1.name = "학생1";
+student1.age = 15;
+student1.grade = 90;
+
+Student student2 = new Student();
+student2.name = "학생2";
+student2.age = 16;
+student2.grade = 80;
+```
+
+`Student` 클래스를 기반으로 `student1`, `student2` 인스턴스를 생성한다.<br>
+그리고 필요한 값을 채워둔다.
+
+### 배열에 참조값 대입
+
+```java
+Student[] students = new Student[2];
+students[0] = student1;
+students[1] = student2;
+
+// 자바에서 대입은 항상 변수에 들어 있는 값을 복사한다.
+students[0] = x001;
+students[1] = x002;
+```
+
+- `Student` 타입 배열을 만들고 각 배열 요소에 참조값을 넣는다.<br>
+- 자바의 변수 대입은 인스턴스를 복사하지 않고 **참조값을 복사**한다.<br>
+- 따라서 `student1`에 들어있는 참조값 `x001`이 `students[0]`에도 저장됨.<br>
+
+### 배열에 들어있는 객체 사용
+
+```java
+System.out.println(students[0].name); // "학생1"
+System.out.println(students[1].name); // "학생2"
+```
+
+- `students[0]`는 참조값 `x001`을 가리키므로 객체 접근 가능<br>
+- `students[1]`은 참조값 `x002`를 가리킴<br>
+
+---
+
+# 배열 도입 - 리팩토링
+
+배열을 사용하면 반복 작업이 가능해지고 출력 코드도 간결해짐
+
+## ClassStart5
+
+```java
+package class1;
+
+public class ClassStart5 {
+    public static void main(String[] args) {
+        Student student1 = new Student();
+        student1.name = "학생1";
+        student1.age = 15;
+        student1.grade = 90;
+
+        Student student2 = new Student();
+        student2.name = "학생2";
+        student2.age = 16;
+        student2.grade = 80;
+
+        // 배열 선언 및 초기화
+        Student[] students = new Student[]{student1, student2};
+
+        // for문 적용
+        for (int i = 0; i < students.length; i++) {
+            System.out.println("이름:" + students[i].name + " 나이:" + students[i].age + " 성적:" + students[i].grade);
+        }
+    }
+}
+```
+
+## 배열 선언 최적화
+
+```java
+Student[] students = new Student[]{student1, student2};
+```
+
+→ 아래처럼 더 간단하게 가능:
+
+```java
+Student[] students = {student1, student2};
+```
+
+## for문 최적화
+
+```java
+for (int i = 0; i < students.length; i++) {
+    Student s = students[i];
+    System.out.println("이름:" + s.name + " 나이:" + s.age + " 성적:" + s.grade);
+}
+```
+
+## 향상된 for문 (Enhanced For Loop)
+
+```java
+for (Student s : students) {
+    System.out.println("이름:" + s.name + " 나이:" + s.age + " 성적:" + s.grade);
+}
+```
+
+- `students` 배열에 있는 객체들을 하나씩 꺼내어 반복 수행<br>
+- 가장 간결하고 자주 사용되는 반복 방식이다.
+
+## 객체나 배열은 모두 참조값을 반환한다.
+
