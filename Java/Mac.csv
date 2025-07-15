@@ -36,6 +36,7 @@ Editing,⌘ + mouse,Brief info
 Editing,⌘F1,Show descriptions of error at caret
 Editing,"⌘ N, ⌃↩︎","디렉토리, 패키지, 클래스 등 생성 목록 보기"
 Editing,⌃O,Override 가능한 메서드 목록을 확인하여 코드를 자동 생성
+Editing,⌥⌘V,변수 자동 생성
 Editing,⌃I,Implement 가능한 메서드 목록을 확인하여 코드를 자동 생성
 Editing,⌘⌥ T,Surround with 메뉴
 Editing,⌘ /,라인 단위로 주석 처리
