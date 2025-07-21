@@ -1,6 +1,6 @@
 ## 변수
 
-```
+```java
 public class Var1 {
     public static void main(String[] args) {
         System.out.println(10);
@@ -8,12 +8,12 @@ public class Var1 {
         System.out.println(10);
     }
 }
-```
+```java
 - 10을 3번 출력하는 대신 20으로 변경하고 싶다면?
 - 사용자가 숫자를 입력하고, 그 숫자를 출력하고 싶다면?
 -> 이를 위해 값을 보관해두고 필요할 때 값을 꺼내 읽을 수 있는 저장소가 필요함. 이를 변수라 한다.
 
-```
+```java
 public class Var2 {
     public static void main(String[] args) {
         int a;  // 변수 선언
@@ -42,7 +42,7 @@ System.out.println(a)
 
 ### 변수 값 변경
 
-```
+```java
 public class Var3 {
     public static void main(String[] args) {
         int a; // 변수 선언
@@ -60,7 +60,7 @@ public class Var3 {
 - 변수를 선언할 때 하나씩 선언할 수도 있고, 여러개를 한 번에 선언할 수 있다.
 * 변수 초기화는 선언한 변수에 처음으로 값을 저장하는 것이다.
 
-```
+```java
 public class Var5 {
     public static void main(String[] args) {
         // 1. 변수 선언, 초기화 각각 따로
@@ -79,7 +79,7 @@ public class Var5 {
 ```
 #### 변수는 반드시 초기화 해야한다.
 
-```
+```java
 public class Var6 {
     public static void main(String[] args) {
         int a;
@@ -91,7 +91,7 @@ public class Var6 {
 따라서 초기화를 하지 않으면 이상한 값이 출력될 수 있어, 자바는 선언 후 변수를 초기화해주어야한다.
 
 ### 변수의 타입
-```
+```java
 public class Var7 {
     public static void main(String[] args) {
         int a = 100;        // 정수
@@ -112,7 +112,7 @@ public class Var7 {
 - 각 변수는 지정한 타입에 맞는 값을 사용해야한다.
 * 리터럴 : 코드에 개발자가 직접 적은 100, 10.5, true, 'A', "Hello Java"  와 같은 고정된 값
 
-```
+```java
 public class Var8 {
     public static void main(String[] args) {
         //정수
