@@ -11,7 +11,7 @@
 ```java
 Dog dog = new Dog();
 Cat cat = new Cat();
-Caw caw = new Caw();
+Caw cow = new Cow();
 
 System.out.println("동물 소리 테스트 시작");
 dog.sound();
@@ -22,7 +22,7 @@ cat.sound();
 System.out.println("동물 소리 테스트 종료");
 
 System.out.println("동물 소리 테스트 시작");
-caw.sound();
+cow.sound();
 System.out.println("동물 소리 테스트 종료");
 ```
 ###  문제점
@@ -49,7 +49,7 @@ public class Dog extends Animal {
 public class Cat extends Animal {
     @Override public void sound() { System.out.println("냐옹"); }
 }
-public class Caw extends Animal {
+public class Cow extends Animal {
     @Override public void sound() { System.out.println("음매"); }
 }
 ```
@@ -68,7 +68,7 @@ private static void soundAnimal(Animal animal) {
 ##  다형성 활용2: 배열과 for문
 
 ```java
-Animal[] animals = {new Dog(), new Cat(), new Caw()};
+Animal[] animals = {new Dog(), new Cat(), new Cow()};
 
 for (Animal animal : animals) {
     soundAnimal(animal);
