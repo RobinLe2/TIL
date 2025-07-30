@@ -1,5 +1,5 @@
 
-# TIL — `java.lang` 패키지와 `Object` 클래스 핵심 정리
+# `java.lang` 패키지와 `Object` 클래스 
 
 ## java.lang 패키지 소개
 - 자바 언어의 가장 기본이 되는 라이브러리(클래스 묶음)  
