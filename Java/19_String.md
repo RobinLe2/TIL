@@ -23,9 +23,9 @@
 
 ##  주요 메서드
 
-| 카테고리 | 메서드 | 설명 |
+| 카테고리  | 메서드 | 설명 |
 |---------|--------|------|
-| 정보 조회 | `.length()`, `.isEmpty()`, `.isBlank()`, `.charAt(i)` | 문자열 길이, 빈 값, 공백 여부, 특정 인덱스 문자 |
+| 정보 조회  | `.length()`, `.isEmpty()`, `.isBlank()`, `.charAt(i)` | 문자열 길이, 빈 값, 공백 여부, 특정 인덱스 문자 |
 | 비교 | `.equals()`, `.equalsIgnoreCase()`, `.compareTo()`, `.startsWith()`, `.endsWith()` | 문자열 비교 및 순서 확인 |
 | 검색 | `.contains()`, `.indexOf()`, `.lastIndexOf()` | 포함 여부, 첫/마지막 등장 위치 |
 | 조작 | `.substring()`, `.concat()`, `.replace()`, `.replaceAll()`, `.toLowerCase()`, `.trim()`, `.strip()` | 부분 문자열, 연결, 대/소문자 변환, 공백 제거 등 |
